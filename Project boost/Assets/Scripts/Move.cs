@@ -8,6 +8,7 @@ public class Move : MonoBehaviour
     AudioSource audioSource;
     [SerializeField] float mainThrust = 150f;
     [SerializeField] float rotateThrust = 100f;
+    [SerializeField] AudioClip mainEngine;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,7 @@ public class Move : MonoBehaviour
         {
             if (!audioSource.isPlaying)
             {
-                audioSource.Play();
+                audioSource.PlayOneShot(mainEngine);
             }
             rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
         }
