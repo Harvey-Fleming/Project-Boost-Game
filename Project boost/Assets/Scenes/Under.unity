@@ -550,14 +550,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 431851437, guid: 73b64f6328e69434080479a06d569a94, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7718187728593755681, guid: 73b64f6328e69434080479a06d569a94, type: 3}
-      propertyPath: Explode
-      value: 
-      objectReference: {fileID: 8300000, guid: dedaee8e2c8e48043bb96121869b1c85, type: 3}
     - target: {fileID: 8173797637453221678, guid: 73b64f6328e69434080479a06d569a94, type: 3}
       propertyPath: m_Name
       value: Rocket
@@ -572,7 +564,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8281566734140785644, guid: 73b64f6328e69434080479a06d569a94, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.37
+      value: 1.83
       objectReference: {fileID: 0}
     - target: {fileID: 8281566734140785644, guid: 73b64f6328e69434080479a06d569a94, type: 3}
       propertyPath: m_LocalPosition.z

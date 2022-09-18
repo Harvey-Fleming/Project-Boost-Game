@@ -10,6 +10,10 @@ public class Move : MonoBehaviour
     [SerializeField] float rotateThrust = 100f;
     [SerializeField] AudioClip mainEngine;
 
+    [SerializeField] ParticleSystem MainboosterParticles;
+    [SerializeField] ParticleSystem LeftboosterParticles;
+    [SerializeField] ParticleSystem RightboosterParticles;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,10 +37,17 @@ public class Move : MonoBehaviour
                 audioSource.PlayOneShot(mainEngine);
             }
             rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
+           
+           if (!MainboosterParticles.isPlaying)
+           {
+                MainboosterParticles.Play();
+           }
+           
         }
         else 
             {
                 audioSource.Stop();
+                MainboosterParticles.Stop();
             }
     }
 
@@ -47,11 +58,24 @@ public class Move : MonoBehaviour
         if (Input.GetKey(KeyCode.A)) 
         {
             ApplyRotation(rotateThrust);
+            if (!RightboosterParticles.isPlaying)
+           {
+                RightboosterParticles.Play();
+           }
         }
 
         else if (Input.GetKey(KeyCode.D)) 
         {
             ApplyRotation(-rotateThrust);
+            if (!LeftboosterParticles.isPlaying)
+           {
+                LeftboosterParticles.Play();
+           }
+        }
+        else 
+        {
+            LeftboosterParticles.Stop();
+            RightboosterParticles.Stop();
         }
 
 
